@@ -15,6 +15,6 @@ apt-get install -y --no-install-recommends \
 RUN useradd -s /bin/bash -m vscode \
  && groupadd docker \
  && usermod -aG docker vscode \
- && echo 'youuser ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+ && echo 'vscode ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 USER vscode
