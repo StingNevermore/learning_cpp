@@ -1,6 +1,16 @@
 FROM ubuntu:18.04
 
-RUN apt-get update && apt-get install -y apt-transport-https && apt-get install -y cmake
+RUN apt-get update && apt-get install -y apt-transport-https && \ 
+apt-get install -y --no-install-recommends \
+  sudo \
+		build-essential \
+		curl \
+		cmake \
+		gcc \
+		git \
+		ca-certificates \
+		pkg-config \
+	&& rm -rf /var/lib/apt/lists/*
 
 RUN useradd -s /bin/bash -m vscode \
  && groupadd docker \
